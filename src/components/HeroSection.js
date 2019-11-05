@@ -4,7 +4,6 @@ import SectionTemplate from 'components/SectionTemplate';
 import { colors } from 'utils';
 import zIndex from 'utils/zindex';
 import HeroImg from 'assets/images/profile.png';
-// import HeroImg2 from 'assets/images/profile2.jpg';
 import DotsSVG from 'assets/images/KROPKI.svg';
 
 const HeroWhiteBox = styled.div`
@@ -44,7 +43,7 @@ const HeroImage = styled.div`
 const HeroQuote = styled.div`
   width: 80%;
   position: relative;
-  right: -50%;
+  right: -55%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +52,7 @@ const HeroQuote = styled.div`
   q {
     font-size: 40px;
     text-align: center;
-    font-weight: 800;
+    font-weight: 500;
     font-style: italic;
   }
 
@@ -66,8 +65,8 @@ const HeroQuote = styled.div`
   }
 `;
 
-const HeroSection = () => (
-  <SectionTemplate>
+const HeroSection = ({ id }) => (
+  <SectionTemplate id={id}>
     <HeroWhiteBox>
       <HeroImage />
       <HeroQuote>

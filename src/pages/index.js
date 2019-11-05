@@ -8,6 +8,9 @@ import AboutSection from 'components/AboutSection';
 import PostersSection from 'components/PostersSection';
 import IllustrationsSection from 'components/IllustrationsSection';
 import LogosSection from 'components/LogosSection';
+import BooksSection from 'components/BooksSection';
+import SidebarScroll from 'components/Sidebars/SidebarScroll';
+import SidebarSocials from 'components/Sidebars/SidebarSocials';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap');
@@ -24,6 +27,22 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     background-color: ${colors.light};
     color: ${colors.dark};
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: ${colors.light};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
   }
 `;
 
@@ -53,12 +72,15 @@ export default class Index extends React.Component {
         </Helmet>
         <GlobalStyle />
         <Navigation />
+        <SidebarScroll />
+        <SidebarSocials />
         <StyledSectionsWrapper>
-          <HeroSection />
-          <AboutSection />
-          <PostersSection />
+          <HeroSection id="home" />
+          <AboutSection id="about" />
+          <PostersSection id="works" />
           <IllustrationsSection />
           <LogosSection />
+          <BooksSection />
         </StyledSectionsWrapper>
       </>
     );

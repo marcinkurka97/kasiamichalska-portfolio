@@ -29,6 +29,7 @@ const PostersTitle = styled.h1`
   margin: 20px 0;
   padding: 10px 0;
   border-bottom: 1px solid ${colors.dark};
+  font-style: italic;
 `;
 
 const PostersContainer = styled.div`
@@ -90,8 +91,8 @@ const PostersContainer = styled.div`
   }
 `;
 
-const PostersSection = () => (
-  <SectionTemplateWhite>
+const PostersSection = ({ id }) => (
+  <SectionTemplateWhite id={id}>
     <PostersWrapper>
       <PostersTitle>plakaty</PostersTitle>
       <PostersContainer>

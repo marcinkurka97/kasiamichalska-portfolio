@@ -25,12 +25,13 @@ const LogosTitle = styled.h1`
   margin: 0 0 60px 0;
   padding: 10px 0;
   border-bottom: 1px solid ${colors.dark};
+  font-style: italic;
 `;
 
 const LogosWrapper = styled.div`
   position: relative;
   height: 80vh;
-  width: 70vw;
+  width: 65vw;
   background: ${colors.lead};
   display: flex;
   justify-content: center;

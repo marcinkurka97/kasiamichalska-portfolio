@@ -25,8 +25,8 @@ const AboutContainer = styled.div`
   }
 `;
 
-const AboutSection = () => (
-  <SectionTemplateWhite>
+const AboutSection = ({ id }) => (
+  <SectionTemplateWhite id={id}>
     <AboutContainer>
       <h3>
         Hej, jestem Kasia, jestem studentką grafiki i freelancerem. Od 9 do 15

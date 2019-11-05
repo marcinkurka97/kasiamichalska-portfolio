@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import zindex from 'utils/zindex';
 import Logo from 'assets/images/logo1.svg';
+import SmoothScroll from 'smooth-scroll';
+import { colors } from 'utils';
 
 const NavigationWapper = styled.div`
   position: absolute;
@@ -37,14 +39,26 @@ const StyledNavButtons = styled.div`
   }
 
   ul li {
-    text-decoration: none;
     display: inline;
     padding: 0 0 0 60px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 22px;
+
+    a {
+      text-decoration: none;
+      color: ${colors.dark};
+      font-weight: 300;
+      font-size: 22px;
+      transition: 0.25s;
+
+      &:hover {
+        font-weight: 500;
+      }
+    }
   }
 `;
+
+var scroll = new SmoothScroll('a[href*="#"]', {
+  speed: 1000,
+});
 
 class Navigation extends Component {
   constructor(props) {
@@ -58,10 +72,18 @@ class Navigation extends Component {
         <StyledLogo />
         <StyledNavButtons>
           <ul>
-            <li>home</li>
-            <li>o mnie</li>
-            <li>prace</li>
-            <li>kontakt</li>
+            <li>
+              <a href="#home">home</a>
+            </li>
+            <li>
+              <a href="#about">o mnie</a>
+            </li>
+            <li>
+              <a href="#works">prace</a>
+            </li>
+            <li>
+              <a href="#contact">kontakt</a>
+            </li>
           </ul>
         </StyledNavButtons>
       </NavigationWapper>
