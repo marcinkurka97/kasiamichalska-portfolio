@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import zindex from 'utils/zindex';
 import Logo from 'assets/images/logo1.svg';
-import SmoothScroll from 'smooth-scroll';
 import { colors } from 'utils';
 
 const NavigationWapper = styled.div`
@@ -60,13 +59,6 @@ class Navigation extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-  }
-
-  componentDidMount() {
-    new SmoothScroll('a[href*="#"]', {
-      speed: 1000,
-      speedAsDuration: true,
-    });
   }
 
   render() {
