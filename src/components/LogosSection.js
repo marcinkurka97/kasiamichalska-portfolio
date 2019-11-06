@@ -6,20 +6,21 @@ import Logo1 from 'assets/images/polaroid.png';
 import Logo2 from 'assets/images/pizzaDuet.png';
 import Logo3 from 'assets/images/pizzaCheesey.png';
 import Logo4 from 'assets/images/symBio.png';
-import Lines from 'assets/images/kreski.png';
 
 const SectionTemplateWhite = styled(StyledWrapper)`
-  height: 100vh;
+  height: 80vh;
+  width: 50vw;
   background: ${colors.light};
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column;
   z-index: 5;
+  align-self: flex-start;
 `;
 
 const LogosTitle = styled.h1`
   position: relative;
-  width: 95vw;
+  width: 45vw;
   text-align: left;
   font-size: 50px;
   margin: 0 0 60px 0;
@@ -31,37 +32,26 @@ const LogosTitle = styled.h1`
 const LogosWrapper = styled.div`
   position: relative;
   height: 80vh;
-  width: 65vw;
+  width: 50vw;
   background: ${colors.lead};
   display: flex;
   justify-content: center;
   align-items: center;
-
-  &:before {
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 80%;
-    left: -50%;
-    background-image: url(${Lines});
-    background-size: cover;
-    z-index: -1;
-  }
 `;
 
 const LogosContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-column-gap: 100px;
+  grid-column-gap: 60px;
   grid-row-gap: 20px;
 
   .logos {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    width: 16vw;
-    height: 16vw;
+    width: 13vw;
+    height: 13vw;
   }
 
   .logo1 {

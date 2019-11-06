@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SectionTemplate from 'components/SectionTemplate';
+import PropTypes from 'prop-types';
 import { colors } from 'utils';
 import zIndex from 'utils/zindex';
 import HeroImg from 'assets/images/profile.png';
@@ -80,5 +81,13 @@ const HeroSection = ({ id }) => (
     </HeroWhiteBox>
   </SectionTemplate>
 );
+
+HeroSection.propTypes = {
+  id: PropTypes.string,
+};
+
+HeroSection.defaultProps = {
+  id: 'home',
+};
 
 export default HeroSection;

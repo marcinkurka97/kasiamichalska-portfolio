@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import StyledWrapper from 'components/SectionTemplate';
+import PropTypes from 'prop-types';
 import { colors } from 'utils';
 import Poster1 from 'assets/images/afisz2-01.png';
 import Poster2 from 'assets/images/plakat1v2.png';
@@ -104,5 +105,13 @@ const PostersSection = ({ id }) => (
     </PostersWrapper>
   </SectionTemplateWhite>
 );
+
+PostersSection.propTypes = {
+  id: PropTypes.string,
+};
+
+PostersSection.defaultProps = {
+  id: 'contact',
+};
 
 export default PostersSection;

@@ -16,12 +16,12 @@ const NavigationWapper = styled.div`
   z-index: ${zindex.level9};
 `;
 
-const StyledLogo = styled.div`
+const LogoContainer = styled.div`
   width: 200px;
   height: 200px;
   background-image: url(${Logo});
-  background-size: contain;
   background-repeat: no-repeat;
+  background-size: contain;
 `;
 
 const StyledNavButtons = styled.div`
@@ -56,20 +56,23 @@ const StyledNavButtons = styled.div`
   }
 `;
 
-var scroll = new SmoothScroll('a[href*="#"]', {
-  speed: 1000,
-});
-
 class Navigation extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
+  componentDidMount() {
+    new SmoothScroll('a[href*="#"]', {
+      speed: 1000,
+      speedAsDuration: true,
+    });
+  }
+
   render() {
     return (
       <NavigationWapper>
-        <StyledLogo />
+        <LogoContainer />
         <StyledNavButtons>
           <ul>
             <li>

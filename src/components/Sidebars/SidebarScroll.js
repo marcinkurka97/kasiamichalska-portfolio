@@ -47,7 +47,7 @@ const StyledSidebarScroll = styled.div`
 
   .btn-top {
     margin-bottom: 50px;
-    transform-origin: 50% 50%;
+    display: none;
 
     span {
       padding-left: 20px;

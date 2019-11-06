@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import StyledWrapper from 'components/SectionTemplate';
 import { colors } from 'utils';
 
@@ -50,5 +51,13 @@ const AboutSection = ({ id }) => (
     </AboutContainer>
   </SectionTemplateWhite>
 );
+
+AboutSection.propTypes = {
+  id: PropTypes.string,
+};
+
+AboutSection.defaultProps = {
+  id: 'about',
+};
 
 export default AboutSection;

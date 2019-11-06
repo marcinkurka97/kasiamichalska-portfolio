@@ -6,41 +6,41 @@ import Book1 from 'assets/images/book1.png';
 import Book2 from 'assets/images/book2.png';
 
 const SectionTemplateWhite = styled(StyledWrapper)`
-  height: 90vh;
+  height: 80vh;
+  width: 50vw;
   background: ${colors.light};
   justify-content: flex-end;
+  flex-direction: row;
+  z-index: 5;
 `;
 
 const BooksTitle = styled.h1`
+  margin: 0 30px 0 0;
   position: relative;
+  height: 60vh;
   top: -3%;
-  height: 90%;
   font-size: 50px;
-  margin: 20px 0;
-  padding: 10px 20px;
   border-left: 1px solid ${colors.dark};
-  margin-right: 50px;
   writing-mode: tb-rl;
-  transform: rotate(180deg);
   text-align: right;
   font-style: italic;
 
   &:after {
     content: '';
     position: absolute;
-    width: 45vw;
+    width: 50vw;
     height: 1px;
     background: ${colors.dark};
     z-index: 10;
-    bottom: 0;
-    right: 101px;
+    top: 0;
+    right: 61px;
   }
 `;
 
 const BooksWrapper = styled.div`
+  position: relative;
   height: 100%;
-  width: 65vw;
-  background: ${colors.lead};
+  width: 50vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,8 +48,9 @@ const BooksWrapper = styled.div`
 
 const BooksContainer = styled.div`
   position: relative;
-  width: 50%;
-  height: 80%;
+  width: 60%;
+  height: 60%;
+  left: 5%;
   border: 1px solid ${colors.dark};
   display: flex;
   justify-content: space-between;
@@ -60,30 +61,30 @@ const BooksContainer = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    width: 70%;
     height: 100%;
   }
 
   .book1 {
     width: 90%;
-    left: -35%;
+    left: -25%;
     background-image: url(${Book1});
   }
   .book2 {
-    right: -25%;
+    width: 60%;
+    right: -20%;
     background-image: url(${Book2});
   }
 `;
 
 const BooksSection = () => (
   <SectionTemplateWhite>
-    <BooksTitle>książki</BooksTitle>
     <BooksWrapper>
       <BooksContainer>
         <div className="books book1" />
         <div className="books book2" />
       </BooksContainer>
     </BooksWrapper>
+    <BooksTitle>książki</BooksTitle>
   </SectionTemplateWhite>
 );
 

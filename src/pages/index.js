@@ -2,15 +2,24 @@ import React from 'react';
 import { colors } from 'utils';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Helmet } from 'react-helmet';
+import { transitions, positions, Provider as AlertProvider } from 'react-alert';
+import AlertTemplate from 'react-alert-template-basic';
+
+import AnimationPage from 'components/AnimationPage';
 import Navigation from 'components/Navigation';
+import SidebarScroll from 'components/Sidebars/SidebarScroll';
+import SidebarSocials from 'components/Sidebars/SidebarSocials';
 import HeroSection from 'components/HeroSection';
 import AboutSection from 'components/AboutSection';
 import PostersSection from 'components/PostersSection';
 import IllustrationsSection from 'components/IllustrationsSection';
 import LogosSection from 'components/LogosSection';
 import BooksSection from 'components/BooksSection';
-import SidebarScroll from 'components/Sidebars/SidebarScroll';
-import SidebarSocials from 'components/Sidebars/SidebarSocials';
+import LogoBookSection from 'components/LogoBookSection';
+import PackagingSection from 'components/PackagingSection';
+import ThreeDSection from 'components/ThreeDSection';
+import Contact from 'components/Contact';
+import Footer from 'components/Footer';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap');
@@ -55,6 +64,19 @@ const StyledSectionsWrapper = styled.div`
   flex-direction: column;
 `;
 
+const SectionCombined = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const options = {
+  position: positions.TOP_CENTER,
+  timeout: 5000,
+  offset: '30px',
+  transition: transitions.FADE,
+};
+
 export default class Index extends React.Component {
   constructor(props) {
     super(props);
@@ -71,6 +93,7 @@ export default class Index extends React.Component {
           <meta name="description" content="Some content." />
         </Helmet>
         <GlobalStyle />
+        <AnimationPage />
         <Navigation />
         <SidebarScroll />
         <SidebarSocials />
@@ -79,8 +102,17 @@ export default class Index extends React.Component {
           <AboutSection id="about" />
           <PostersSection id="works" />
           <IllustrationsSection />
-          <LogosSection />
-          <BooksSection />
+          <SectionCombined>
+            <BooksSection />
+            <LogosSection />
+          </SectionCombined>
+          <LogoBookSection />
+          <PackagingSection />
+          <ThreeDSection />
+          <AlertProvider template={AlertTemplate} {...options}>
+            <Contact id="contact" />
+          </AlertProvider>
+          <Footer />
         </StyledSectionsWrapper>
       </>
     );
