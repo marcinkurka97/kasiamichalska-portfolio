@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors } from 'utils';
+import { colors, media } from 'utils';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { transitions, positions, Provider as AlertProvider } from 'react-alert';
@@ -68,6 +68,10 @@ const SectionCombined = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  ${media.phone`
+    flex-direction: column;
+  `}
 `;
 
 const options = {
@@ -90,7 +94,12 @@ export default class Index extends React.Component {
           <html lang="en" />
           <title>Kasia Michalska portfolio</title>
           <meta charSet="utf-8" />
-          <meta name="description" content="Some content." />
+          <meta
+            name="description"
+            content="Hej, jestem Kasia, jestem studentką grafiki i freelancerem. Od 9 do 15
+                  robię wszystko to, czego ode mnie oczekują. A później zaczynam tworzyć
+                  DESIGN."
+          />
         </Helmet>
         <GlobalStyle />
         <AnimationPage />

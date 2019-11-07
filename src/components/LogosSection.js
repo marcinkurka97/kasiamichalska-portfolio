@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import StyledWrapper from 'components/SectionTemplate';
-import { colors } from 'utils';
-import Logo1 from 'assets/images/polaroid.png';
-import Logo2 from 'assets/images/pizzaDuet.png';
-import Logo3 from 'assets/images/pizzaCheesey.png';
-import Logo4 from 'assets/images/symBio.png';
+import { colors, media } from 'utils';
+import Logo1 from 'assets/images/polaroid.svg';
+import Logo2 from 'assets/images/pizzaDuet.svg';
+import Logo3 from 'assets/images/pizzaCheesey.svg';
+import Logo4 from 'assets/images/symBio.svg';
 
 const SectionTemplateWhite = styled(StyledWrapper)`
   height: 80vh;
@@ -16,6 +16,12 @@ const SectionTemplateWhite = styled(StyledWrapper)`
   flex-direction: column;
   z-index: 5;
   align-self: flex-start;
+
+  ${media.phone`
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+  `}
 `;
 
 const LogosTitle = styled.h1`
@@ -27,6 +33,12 @@ const LogosTitle = styled.h1`
   padding: 10px 0;
   border-bottom: 1px solid ${colors.dark};
   font-style: italic;
+
+  ${media.phone`
+    width: 80vw;
+    font-size: 40px;
+    margin: 0;
+  `}
 `;
 
 const LogosWrapper = styled.div`
@@ -37,6 +49,11 @@ const LogosWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${media.phone`
+    width: 100vw;
+    height: 80%;
+  `}
 `;
 
 const LogosContainer = styled.div`
@@ -66,6 +83,18 @@ const LogosContainer = styled.div`
   .logo4 {
     background-image: url(${Logo4});
   }
+
+  ${media.phone`
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+
+    .logos {
+      width: 40vw;
+      height: 40vw;
+    }
+  `}
 `;
 
 const LogosSection = () => (

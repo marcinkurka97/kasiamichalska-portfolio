@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { colors, media } from 'utils';
 
 const slideIn = keyframes`
   0% {
@@ -28,7 +29,7 @@ const StyledSidebarScroll = styled.div`
     border: none;
     text-decoration: none;
     font-size: 12px;
-    color: #000;
+    color: ${colors.dark};
     font-weight: 700;
     transition: opacity 0.6s;
     animation: ${slideIn} 0.6s ease-in-out;
@@ -67,6 +68,10 @@ const StyledSidebarScroll = styled.div`
     transform: translateX(10px);
     transition: transform 0.6s;
   }
+
+  ${media.phone`
+    display: none;
+  `}
 `;
 
 class SidebarScroll extends React.Component {

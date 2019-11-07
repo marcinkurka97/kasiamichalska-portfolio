@@ -2,11 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import StyledWrapper from 'components/SectionTemplate';
-import { colors } from 'utils';
+import { colors, media } from 'utils';
 
 const SectionTemplateWhite = styled(StyledWrapper)`
   height: 60vh;
   background: ${colors.light};
+
+  ${media.phone`
+    height: 90vh;
+  `}
 `;
 
 const AboutContainer = styled.div`
@@ -24,6 +28,19 @@ const AboutContainer = styled.div`
     line-height: 30px;
     font-weight: 300;
   }
+
+  ${media.phone`
+    width: 80%;
+
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  `}
 `;
 
 const AboutSection = ({ id }) => (

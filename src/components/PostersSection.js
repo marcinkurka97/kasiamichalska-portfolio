@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import StyledWrapper from 'components/SectionTemplate';
 import PropTypes from 'prop-types';
-import { colors } from 'utils';
+import { colors, media } from 'utils';
 import Poster1 from 'assets/images/afisz2-01.png';
 import Poster2 from 'assets/images/plakat1v2.png';
 import Poster3 from 'assets/images/plakat1-01.png';
@@ -20,6 +20,26 @@ const PostersWrapper = styled.div`
   width: 80vw;
   background: ${colors.lead};
   z-index: 5;
+
+  ${media.phone`
+    position: absolute;
+    right: 0;
+    width: 85vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -60%;
+      height: 100%;
+      width: 60%;
+      background-image: url(${Leaves});
+      background-size: contain;
+      z-index: -2;
+    }
+  `}
 `;
 
 const PostersTitle = styled.h1`
@@ -31,6 +51,16 @@ const PostersTitle = styled.h1`
   padding: 10px 0;
   border-bottom: 1px solid ${colors.dark};
   font-style: italic;
+
+  ${media.phone`
+    width: 100%;
+    left: 0;
+    font-size: 40px;
+    margin: 10px 0;
+    padding: 0;
+    border: none;
+    text-align: center;
+  `}
 `;
 
 const PostersContainer = styled.div`
@@ -90,6 +120,48 @@ const PostersContainer = styled.div`
     right: -65%;
     z-index: -2;
   }
+
+  ${media.phone`
+    width: 100vw;
+    height: 80vh;
+    right: 0;
+    left: 0%;
+    top: 2%;
+   
+
+    &:before {
+      display: none;
+    }
+
+    .poster1 {
+      width: 50%;
+      height: 50%;
+      top: 5%;
+      left: 5%;
+      z-index: -1;
+    }
+    .poster2 {
+      width: 50%;
+      height: 50%;
+      top: 15%;
+      left: 45%;
+      z-index: -2;
+    }
+    .poster3 {
+      width: 55%;
+      height: 55%;
+      top: 50%;
+      left: 5%;
+      z-index: -1;
+    }
+    .poster4 {
+      width: 60%;
+      height: 60%;
+      top: 45%;
+      right: 5%;
+      z-index: 2;
+    }
+  `}
 `;
 
 const PostersSection = ({ id }) => (

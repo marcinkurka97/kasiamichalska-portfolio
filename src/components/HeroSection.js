@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SectionTemplate from 'components/SectionTemplate';
 import PropTypes from 'prop-types';
-import { colors } from 'utils';
+import { colors, media } from 'utils';
 import zIndex from 'utils/zindex';
 import HeroImg from 'assets/images/profile.png';
 import DotsSVG from 'assets/images/KROPKI.svg';
@@ -17,6 +17,13 @@ const HeroWhiteBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  ${media.phone`
+    top: -10%;
+    width: 70vw;
+    height: 70vw;
+    flex-direction: column;
+  `}
 `;
 
 const HeroImage = styled.div`
@@ -39,6 +46,17 @@ const HeroImage = styled.div`
     background-size: contain;
     z-index: -1;
   }
+
+  ${media.phone`
+    top: 10%;
+    left: -10%;
+    width: 70vw;
+    height: 70vw;
+
+    &:before {
+      display: none;
+    }
+  `}
 `;
 
 const HeroQuote = styled.div`
@@ -64,6 +82,22 @@ const HeroQuote = styled.div`
     font-weight: 600;
     padding: 0 20px;
   }
+
+  ${media.phone`
+    right: 0;
+    top: 120%;
+    width: 100%;
+
+    q {
+      font-size: 20px;
+      font-weight: 300;
+    }
+  
+    p {
+      font-size: 16px;
+      font-weight: 800;
+    }
+  `}
 `;
 
 const HeroSection = ({ id }) => (

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import StyledWrapper from 'components/SectionTemplate';
-import { colors } from 'utils';
+import { colors, media } from 'utils';
 import LogoBook from 'assets/images/znaki.png';
 
 const SectionTemplateWhite = styled(StyledWrapper)`
@@ -31,6 +31,19 @@ const LogoBookTitle = styled.h1`
     background: ${colors.lead};
     z-index: -1;
   }
+
+  ${media.phone`
+  width: 100vw;
+  left: 0;
+  font-size: 40px;
+  margin: 0 0 20px 0;
+  padding: 10px 20px 10px 0;
+  text-align: right;
+
+    &:after {
+      display: none;
+    }
+`}
 `;
 
 const LogoBookImage = styled.div`

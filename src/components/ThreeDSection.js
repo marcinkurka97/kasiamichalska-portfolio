@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import StyledWrapper from 'components/SectionTemplate';
-import { colors } from 'utils';
+import { colors, media } from 'utils';
 import ThreeD1 from 'assets/images/3d.png';
 import ThreeD2 from 'assets/images/mir.png';
 import ThreeD3 from 'assets/images/donuuut.png';
@@ -12,6 +12,11 @@ const SectionTemplateWhite = styled(StyledWrapper)`
   flex-direction: row;
   justify-content: space-between;
   z-index: 5;
+
+  ${media.phone`
+    flex-direction: column;
+    height: 90vh;
+`}
 `;
 
 const ThreeDTitle = styled.h1`
@@ -35,6 +40,22 @@ const ThreeDTitle = styled.h1`
     top: 0;
     right: 61px;
   }
+
+  ${media.phone`
+    writing-mode: lr-tb;
+    border: none;
+    height: auto;
+    order: 1;
+    margin: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+
+    &:after {
+      display: none;
+    }
+  `}
 `;
 
 const ThreeDWrapper = styled.div`
@@ -61,12 +82,33 @@ const ThreeDWrapper = styled.div`
   .threeD2 {
     width: 25%;
     background-image: url(${ThreeD2});
-    background-position: 70% center;
+    background-position: 100% center;
   }
 
   .threeD3 {
     background-image: url(${ThreeD3});
   }
+
+  ${media.phone`
+    width: 100vw;
+    height: 85%;
+    order: 2;
+    align-self: flex-start;
+    flex-direction: column;
+
+    .threeDs {
+      height: 30%;
+      width: 94%;
+    }
+
+    .threeD1 {
+      background-position: center 60%;
+    }
+
+    .threeD3 {
+      background-position: center 10%;
+    }
+  `}
 `;
 
 const ThreeDSection = () => (

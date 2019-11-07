@@ -6,7 +6,8 @@ import * as Yup from 'yup';
 import PropTypes from 'prop-types';
 import { useAlert } from 'react-alert';
 import StyledWrapper from 'components/SectionTemplate';
-import { colors } from 'utils';
+import { colors, media } from 'utils';
+import Waves from 'assets/images/FALA.svg';
 
 const SignupSchema = Yup.object().shape({
   email: Yup.string()
@@ -36,11 +37,30 @@ const ContactTitle = styled.h1`
   text-align: center;
   border-bottom: 1px solid ${colors.dark};
   font-style: italic;
+
+  ${media.phone`
+    margin: 0;
+    font-size: 40px;
+  `}
 `;
 
 const ContactWrapper = styled.div`
   width: 60vw;
   margin: auto auto;
+  position: relative;
+  z-index: 5;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    width: 45%;
+    height: 62%;
+    background-image: url(${Waves});
+    background-size: cover;
+    z-index: -1;
+  }
 
   form {
     position: relative;
@@ -49,7 +69,6 @@ const ContactWrapper = styled.div`
     justify-content: center;
     flex-direction: column;
     margin: 10px 0 0 0;
-    z-index: 5;
 
     .contact-inputs {
       display: flex;
@@ -58,7 +77,7 @@ const ContactWrapper = styled.div`
       input {
         color: ${colors.dark};
         border: 1px solid ${colors.dark};
-        background: transparent;
+        background: ${colors.light};
         font-size: 24px;
         padding: 10px;
         margin: 0 0 40px 0;
@@ -97,7 +116,7 @@ const ContactWrapper = styled.div`
       height: 20vh;
       color: ${colors.dark};
       border: 1px solid ${colors.dark};
-      background: transparent;
+      background: ${colors.light};
       font-size: 18px;
       padding: 10px;
       margin: 0 0 40px 0;
@@ -116,6 +135,7 @@ const ContactWrapper = styled.div`
       font-size: 24px;
       width: 200px;
       height: 80px;
+      z-index: 5;
     }
 
     button::before {
@@ -155,6 +175,44 @@ const ContactWrapper = styled.div`
       }
     }
   }
+
+  ${media.phone`
+    width: 90%;
+
+    &:after {
+      left: -10%;
+      top: 10%;
+      width: 110vw;
+      height: 50%;
+    }
+
+    form {
+      .contact-inputs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+  
+        .single-input {
+          width: 80%;
+
+          input {
+            margin: 0 0 30px 0;
+          }
+        }
+      }
+
+      textarea {
+        margin: 0 0 20px 0;
+      }
+
+      button {
+        margin: 0 auto;
+        width: 150px;
+        height: 60px;
+      }
+    }
+  `}
 `;
 
 const Contact = ({ id }) => {

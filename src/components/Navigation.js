@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import zindex from 'utils/zindex';
 import Logo from 'assets/images/logo1.svg';
-import { colors } from 'utils';
+import { colors, media } from 'utils';
 
 const NavigationWapper = styled.div`
   position: absolute;
@@ -13,6 +13,10 @@ const NavigationWapper = styled.div`
   align-items: center;
   justify-content: space-between;
   z-index: ${zindex.level9};
+
+  ${media.phone`
+    padding: 0;
+  `}
 `;
 
 const LogoContainer = styled.div`
@@ -21,6 +25,12 @@ const LogoContainer = styled.div`
   background-image: url(${Logo});
   background-repeat: no-repeat;
   background-size: contain;
+
+  ${media.phone`
+    height: 100px;
+    width: 20vw;
+    order: 2;
+  `}
 `;
 
 const StyledNavButtons = styled.div`
@@ -53,6 +63,36 @@ const StyledNavButtons = styled.div`
       }
     }
   }
+
+  ${media.phone`
+    height: 50px;
+    width: 80vw;
+    margin: 0;
+    justify-content: center;
+    border: none;
+
+    ul {
+      display: flex;
+      position: relative;
+      
+      &:after {
+        content: '';
+        position: absolute;
+        top: 150%;
+        width: 100%;
+        height: 1px;
+        background: ${colors.dark}
+      }
+    }
+
+    ul li {
+      padding: 0 10px;
+      
+      a {
+        font-size: 16px;
+      }
+    }
+  `}
 `;
 
 class Navigation extends Component {

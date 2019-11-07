@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { colors, media } from 'utils';
 
 const FadeIn = keyframes`
   0% {
@@ -24,8 +25,8 @@ const StyledSidebar = styled.div`
     align-items: center;
 
     span:first-of-type {
-      background: #000;
-      color: #fff;
+      background: ${colors.dark};
+      color: ${colors.light};
       font-weight: 700;
       padding: 5px 10px;
       font-size: 10px;
@@ -51,7 +52,7 @@ const StyledSidebar = styled.div`
 
       a {
         text-decoration: none;
-        color: #000;
+        color: ${colors.dark};
       }
 
       a:hover {
@@ -63,6 +64,10 @@ const StyledSidebar = styled.div`
       margin-left: 5px;
     }
   }
+
+  ${media.phone`
+    display: none;
+  `}
 `;
 
 function Sidebar() {

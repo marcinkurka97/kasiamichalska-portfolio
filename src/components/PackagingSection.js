@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import StyledWrapper from 'components/SectionTemplate';
-import { colors } from 'utils';
-import Lines from 'assets/images/kreski.png';
+import { colors, media } from 'utils';
+import Lines from 'assets/images/skosy.svg';
 
 const SectionTemplateWhite = styled(StyledWrapper)`
   height: 80vh;
@@ -21,6 +21,13 @@ const PackagingTitle = styled.h1`
   padding: 10px 0;
   border-bottom: 1px solid ${colors.dark};
   font-style: italic;
+
+  ${media.phone`
+    width: 90vw;
+    font-size: 35px;
+    left: 0;
+    text-align: center;
+  `}
 `;
 
 const PackagingWrapper = styled.div`
@@ -38,9 +45,18 @@ const PackagingWrapper = styled.div`
     height: 130%;
     width: 70%;
     background-image: url(${Lines});
-    background-size: contain;
+    background-size: cover;
     z-index: -1;
   }
+
+  ${media.phone`
+    width: 90vw;
+
+    &:after {
+      left: 10%;
+      width: 80%;
+    }
+  `}
 `;
 
 const PackagingSection = () => (

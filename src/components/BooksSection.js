@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import StyledWrapper from 'components/SectionTemplate';
-import { colors } from 'utils';
+import { colors, media } from 'utils';
 import Book1 from 'assets/images/book1.png';
 import Book2 from 'assets/images/book2.png';
 
@@ -12,6 +12,12 @@ const SectionTemplateWhite = styled(StyledWrapper)`
   justify-content: flex-end;
   flex-direction: row;
   z-index: 5;
+
+  ${media.phone`
+    height: 60vh;
+    width: 100vw;
+    flex-direction: column;
+  `}
 `;
 
 const BooksTitle = styled.h1`
@@ -35,6 +41,19 @@ const BooksTitle = styled.h1`
     top: 0;
     right: 61px;
   }
+
+  ${media.phone`
+    writing-mode: lr-tb;
+    border: none;
+    margin: 0;
+    height: auto;
+    top: 0;
+    font-size: 40px;
+    order: 1;
+
+    &:after {
+      display: none;
+    `}
 `;
 
 const BooksWrapper = styled.div`
@@ -44,6 +63,11 @@ const BooksWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${media.phone`
+    order: 2;
+    width: 100vw;
+  `}
 `;
 
 const BooksContainer = styled.div`
@@ -74,6 +98,20 @@ const BooksContainer = styled.div`
     right: -20%;
     background-image: url(${Book2});
   }
+
+  ${media.phone`
+    width: 80%;
+    height: 70%;
+    left: 0;
+    border-width: 2px;
+
+    .book1 {
+      left: -20%;
+    }
+    .book2 {
+      right: -15%;
+    }
+  `}
 `;
 
 const BooksSection = () => (
