@@ -30,6 +30,7 @@ const LogoContainer = styled.div`
     height: 100px;
     width: 20vw;
     order: 2;
+    margin: 10px 10px 0 0;
   `}
 `;
 
@@ -51,7 +52,10 @@ const StyledNavButtons = styled.div`
     display: inline;
     padding: 0 0 0 60px;
 
-    a {
+    button {
+      padding: 0;
+      background: none;
+      border: none;
       text-decoration: none;
       color: ${colors.dark};
       font-weight: 300;
@@ -86,10 +90,13 @@ const StyledNavButtons = styled.div`
     }
 
     ul li {
+      position: relative;
       padding: 0 10px;
+      display: flex;
+      left: -10px;
       
-      a {
-        font-size: 16px;
+      button {
+        font-size: 14px;
       }
     }
   `}
@@ -101,6 +108,14 @@ class Navigation extends Component {
     this.state = {};
   }
 
+  scrollTo = element => {
+    ({
+      top: document.getElementById(element).offsetTop,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
+
   render() {
     return (
       <NavigationWapper>
@@ -108,16 +123,24 @@ class Navigation extends Component {
         <StyledNavButtons>
           <ul>
             <li>
-              <a href="#home">home</a>
+              <button type="button" onClick={() => this.scrollTo('home')}>
+                home
+              </button>
             </li>
             <li>
-              <a href="#about">o mnie</a>
+              <button type="button" onClick={() => this.scrollTo('about')}>
+                o mnie
+              </button>
             </li>
             <li>
-              <a href="#works">prace</a>
+              <button type="button" onClick={() => this.scrollTo('works')}>
+                prace
+              </button>
             </li>
             <li>
-              <a href="#contact">kontakt</a>
+              <button type="button" onClick={() => this.scrollTo('contact')}>
+                kontakt
+              </button>
             </li>
           </ul>
         </StyledNavButtons>

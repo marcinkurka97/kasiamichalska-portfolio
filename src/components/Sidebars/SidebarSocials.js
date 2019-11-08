@@ -65,6 +65,12 @@ const StyledSidebar = styled.div`
     }
   }
 
+  ${media.tablet`
+    height: 30px;
+    top: 80vh;
+    left: -12.5%;
+  `}
+
   ${media.phone`
     display: none;
   `}

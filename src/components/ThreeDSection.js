@@ -11,15 +11,20 @@ const SectionTemplateWhite = styled(StyledWrapper)`
   background: ${colors.light};
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-end;
   z-index: 5;
+
+  ${media.tablet`
+    height: 55vh;
+  `}
 
   ${media.phone`
     flex-direction: column;
     height: 90vh;
-`}
+  `}
 `;
 
-const ThreeDTitle = styled.h1`
+const ThreeDTitle = styled.h2`
   position: relative;
   right: 20%;
   top: -5%;
@@ -41,16 +46,29 @@ const ThreeDTitle = styled.h1`
     right: 61px;
   }
 
+  ${media.tablet`
+    right: 0;
+    height: 92%;
+    padding: 0 10px;
+
+    &:after {
+      width: 100vw;
+      right: 81px;
+    }
+  `}
+
   ${media.phone`
     writing-mode: lr-tb;
     border: none;
+    border-bottom: 1px solid ${colors.dark}
     height: auto;
     order: 1;
-    margin: 0;
+    margin: 20px 0 0 0;
     top: 0;
-    right: 0;
-    width: 100%;
+    right: 20vw;
+    width: 80vw;
     text-align: center;
+    font-size: 40px;
 
     &:after {
       display: none;
@@ -71,12 +89,12 @@ const ThreeDWrapper = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 80%;
+    height: 87.5%;
     width: 32.5%;
   }
 
   .threeD1 {
-    background-image: url(${ThreeD1});
+    background-image: url(${ThreeD3});
   }
 
   .threeD2 {
@@ -86,8 +104,13 @@ const ThreeDWrapper = styled.div`
   }
 
   .threeD3 {
-    background-image: url(${ThreeD3});
+    background-image: url(${ThreeD1});
   }
+
+  ${media.tablet`
+    width: 90vw;
+    height: 50vh;
+  `}
 
   ${media.phone`
     width: 100vw;
@@ -102,11 +125,11 @@ const ThreeDWrapper = styled.div`
     }
 
     .threeD1 {
-      background-position: center 60%;
+      background-position: center 40%;
     }
 
     .threeD3 {
-      background-position: center 10%;
+      background-position: center 60%;
     }
   `}
 `;

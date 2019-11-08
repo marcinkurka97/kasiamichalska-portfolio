@@ -9,9 +9,13 @@ const SectionTemplateWhite = styled(StyledWrapper)`
   background: ${colors.light};
   flex-direction: column;
   z-index: 5;
+
+  ${media.tablet`
+    height: 40vh;
+  `}
 `;
 
-const LogoBookTitle = styled.h1`
+const LogoBookTitle = styled.h2`
   position: relative;
   width: 90vw;
   left: 10vw;
@@ -32,13 +36,26 @@ const LogoBookTitle = styled.h1`
     z-index: -1;
   }
 
+  ${media.tablet`
+    width: 80vw;
+    left: 10vw;
+    font-size: 40px;
+    margin: 20px 0 20px 0;
+    padding: 10px 20px 10px 0;
+    text-align: center;
+
+      &:after {
+        display: none;
+      }
+  `}
+
   ${media.phone`
-  width: 100vw;
-  left: 0;
-  font-size: 40px;
-  margin: 0 0 20px 0;
-  padding: 10px 20px 10px 0;
-  text-align: right;
+    width: 80vw;
+    left: 10vw;
+    font-size: 40px;
+    margin: 0 0 20px 0;
+    padding: 10px 20px 10px 0;
+    text-align: right;
 
     &:after {
       display: none;

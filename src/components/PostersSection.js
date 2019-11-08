@@ -42,7 +42,7 @@ const PostersWrapper = styled.div`
   `}
 `;
 
-const PostersTitle = styled.h1`
+const PostersTitle = styled.h2`
   position: relative;
   width: 75vw;
   left: 25vw;
@@ -121,44 +121,78 @@ const PostersContainer = styled.div`
     z-index: -2;
   }
 
+  ${media.tablet`
+    width: 80vw;
+    right: -15%;
+
+    .poster1 {
+      width: 55%;
+      height: 55%;
+      top: 47.5%;
+      left: -2.5%;
+      z-index: -1;
+    }
+    .poster2 {
+      width: 60%;
+      height: 60%;
+      top: -2.5%;
+      left: 2.5%;
+      z-index: -2;
+    }
+    .poster3 {
+      width: 60%;
+      height: 60%;
+      top: 42.5%;
+      left: 45%;
+      z-index: 1;
+    }
+    .poster4 {
+      width: 60%;
+      height: 60%;
+      top: -2.5%;
+      left: 56%;
+      z-index: -2;
+    }
+
+  `}
+
   ${media.phone`
     width: 100vw;
     height: 80vh;
     right: 0;
     left: 0%;
     top: 2%;
-   
 
     &:before {
       display: none;
     }
 
     .poster1 {
-      width: 50%;
-      height: 50%;
-      top: 5%;
+      width: 40%;
+      height: 40%;
+      top: 2.5%;
       left: 5%;
       z-index: -1;
     }
     .poster2 {
-      width: 50%;
-      height: 50%;
-      top: 15%;
+      width: 45%;
+      height: 45%;
+      top: 6%;
+      left: 40%;
+      z-index: -1;
+    }
+    .poster3 {
+      width: 45%;
+      height: 45%;
+      top: 53%;
       left: 45%;
       z-index: -2;
     }
-    .poster3 {
-      width: 55%;
-      height: 55%;
-      top: 50%;
-      left: 5%;
-      z-index: -1;
-    }
     .poster4 {
-      width: 60%;
-      height: 60%;
+      width: 50%;
+      height: 50%;
       top: 45%;
-      right: 5%;
+      left: 6.5%;
       z-index: 2;
     }
   `}

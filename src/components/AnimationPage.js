@@ -38,6 +38,12 @@ const SectionTemplate = styled(StyledWrapper)`
 
   svg {
     animation: ${FadeIn} 4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    margin: 0 auto;
+    display: inline-block;
+
+    g {
+      margin: 0 auto;
+    }
 
     ${media.phone`
       height: 60vw !important;

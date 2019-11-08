@@ -12,6 +12,10 @@ const SectionTemplateWhite = styled(StyledWrapper)`
   background: ${colors.light};
   justify-content: flex-start;
 
+  ${media.tablet`
+    height: 90vh;
+  `}
+
   ${media.phone`
     height: 80vh;
   `}
@@ -22,6 +26,16 @@ const IllustrationsWrapper = styled.div`
   width: 80vw;
   background: ${colors.lead};
   z-index: 5;
+
+  ${media.tablet`
+    height: 90%;
+    width: 85vw;
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  `}
 
   ${media.phone`
     height: 90%;
@@ -34,7 +48,7 @@ const IllustrationsWrapper = styled.div`
   `}
 `;
 
-const IllustrationsTitle = styled.h1`
+const IllustrationsTitle = styled.h2`
   position: relative;
   width: 75vw;
   text-align: right;
@@ -44,10 +58,18 @@ const IllustrationsTitle = styled.h1`
   border-bottom: 1px solid ${colors.dark};
   font-style: italic;
 
+  ${media.tablet`
+    width: 90%;
+    right: 10%;
+    text-align: right;
+    margin: 0;
+  `}
+
   ${media.phone`
     font-size: 40px;
-    width: 80%;
-    text-align: center;
+    width: 90%;
+    right: 10%;
+    text-align: right;
     margin: 0;
   `}
 `;
@@ -123,19 +145,70 @@ const IllustrationsContainer = styled.div`
     }
   }
 
-  ${media.phone`
+  ${media.tablet`
     top: 5%;
-    width: 90%;
-    height: 65%;
+    width: 95vw;
+    left: 2.5vw;
+    height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 30px;
+    grid-column-gap: 0px;
+    grid-row-gap: 50px;
+    justify-items: center;
+    margin: 0 auto;
 
     .illustrations {
-      width: 100%;
-      height: 100%;
+      width: 38vw;
+      height: 38vw;
+    }
+
+    .illustration2 {
+      &:before {
+        top: -5%;
+        left: 5%;
+        z-index: -1;
+      }
+    }
+    .illustration3 {
+      &:before {
+        top: 5%;
+        left: -5%;
+        z-index: -1;
+      }
+    }
+  `}
+
+  ${media.phone`
+    top: 5%;
+    width: 95vw;
+    left: 2.5vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 30px;
+    margin: 0 auto;
+
+    .illustrations {
+      width: 40vw;
+      height: 40vw;
+    }
+
+    .illustration2 {
+      &:before {
+        top: -5%;
+        left: 5%;
+        z-index: -1;
+      }
+    }
+    .illustration3 {
+      &:before {
+        top: 5%;
+        left: -5%;
+        z-index: -1;
+      }
     }
   `}
 `;

@@ -7,6 +7,18 @@ import zIndex from 'utils/zindex';
 import HeroImg from 'assets/images/profile.png';
 import DotsSVG from 'assets/images/KROPKI.svg';
 
+const StyledSectionTemplate = styled(SectionTemplate)`
+  height: 100vh;
+
+  ${media.tablet`
+    height: 65vh;
+    `}
+
+  ${media.phone`
+    height: 100vh;
+    `}
+`;
+
 const HeroWhiteBox = styled.div`
   position: relative;
   top: 5%;
@@ -18,7 +30,13 @@ const HeroWhiteBox = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  ${media.tablet`
+    width: 50vw;
+    height: 50vw;
+  `}
+
   ${media.phone`
+    left: 7vw;
     top: -10%;
     width: 70vw;
     height: 70vw;
@@ -46,6 +64,12 @@ const HeroImage = styled.div`
     background-size: contain;
     z-index: -1;
   }
+
+  ${media.tablet`
+    width: 70%;
+    height: 70%;
+    left: -15%;
+  `}
 
   ${media.phone`
     top: 10%;
@@ -83,10 +107,24 @@ const HeroQuote = styled.div`
     padding: 0 20px;
   }
 
+  ${media.tablet`
+    width: 70%;
+    right: -65%;
+
+    q {
+      font-size: 26px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  `}
+
   ${media.phone`
     right: 0;
     top: 120%;
     width: 100%;
+    left: -7vw;
 
     q {
       font-size: 20px;
@@ -101,19 +139,20 @@ const HeroQuote = styled.div`
 `;
 
 const HeroSection = ({ id }) => (
-  <SectionTemplate id={id}>
+  <StyledSectionTemplate id={id}>
     <HeroWhiteBox>
       <HeroImage />
       <HeroQuote>
         <q>
-          There are three responses to a piece of design – yes, no, and WOW!
+          There are three responses to a piece of design –&nbsp;yes, no, and
+          WOW!
           <br />
           Wow is the one to aim for.
         </q>
         <p> - Milton Glaser</p>
       </HeroQuote>
     </HeroWhiteBox>
-  </SectionTemplate>
+  </StyledSectionTemplate>
 );
 
 HeroSection.propTypes = {

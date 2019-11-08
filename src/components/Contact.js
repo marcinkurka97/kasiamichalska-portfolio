@@ -23,24 +23,41 @@ const SignupSchema = Yup.object().shape({
 });
 
 const SectionTemplateWhite = styled(StyledWrapper)`
-  height: 80vh;
+  height: 70vh;
   background: ${colors.light};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  ${media.tablet`
+    height: 60vh;
+  `}
+
+  ${media.phone`
+    height: 80vh;
+  `}
 `;
 
-const ContactTitle = styled.h1`
-  width: 80vw;
+const ContactTitle = styled.h2`
+  position: relative;
+  width: 100vw;
   font-size: 50px;
   padding: 10px 0;
   text-align: center;
   border-bottom: 1px solid ${colors.dark};
   font-style: italic;
+  margin: 30px 0 0 0;
+
+  ${media.tablet`
+    margin: 20px 0 0 0;
+  `}
 
   ${media.phone`
-    margin: 0;
+    width: 70vw;
+    left: 15vw;
+    margin: 10px 0;
     font-size: 40px;
+    text-align: left;
   `}
 `;
 
@@ -54,9 +71,9 @@ const ContactWrapper = styled.div`
     content: '';
     position: absolute;
     left: 50%;
-    top: 15%;
+    top: 12%;
     width: 45%;
-    height: 62%;
+    height: 65%;
     background-image: url(${Waves});
     background-size: cover;
     z-index: -1;
@@ -68,7 +85,6 @@ const ContactWrapper = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 10px 0 0 0;
 
     .contact-inputs {
       display: flex;
@@ -121,6 +137,7 @@ const ContactWrapper = styled.div`
       padding: 10px;
       margin: 0 0 40px 0;
       resize: none;
+      font-family: 'Roboto', sans-serif;
     }
 
     button {
@@ -176,6 +193,18 @@ const ContactWrapper = styled.div`
     }
   }
 
+  ${media.tablet`
+    width: 90%;
+
+    &:after {
+      left: 50%;
+      top: 12.5%;
+      width: 45%;
+      height: 65.5%;
+    }
+
+  `}
+
   ${media.phone`
     width: 90%;
 
@@ -183,7 +212,7 @@ const ContactWrapper = styled.div`
       left: -10%;
       top: 10%;
       width: 110vw;
-      height: 50%;
+      height: 49.5%;
     }
 
     form {
@@ -269,13 +298,13 @@ const Contact = ({ id }) => {
             <Form>
               <div className="contact-inputs">
                 <div className="single-input">
-                  <Field name="email" type="email" placeholder="Email" />
+                  <Field name="email" type="email" placeholder="E-mail" />
                   {errors.email && touched.email ? (
                     <div className="input-error">{errors.email}</div>
                   ) : null}
                 </div>
                 <div className="single-input">
-                  <Field name="subject" type="text" placeholder="Subject" />
+                  <Field name="subject" type="text" placeholder="Temat" />
                   {errors.subject && touched.subject ? (
                     <div className="input-error">{errors.subject}</div>
                   ) : null}
@@ -285,7 +314,7 @@ const Contact = ({ id }) => {
                 <Field
                   name="content"
                   component="textarea"
-                  placeholder="Message"
+                  placeholder="Wiadomość"
                 />
                 {errors.content && touched.content ? (
                   <div className="input-error error-textarea">

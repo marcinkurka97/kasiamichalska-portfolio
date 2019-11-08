@@ -15,15 +15,23 @@ const slideIn = keyframes`
 
 const StyledSidebarScroll = styled.div`
   position: fixed;
-  top: 80%;
+  top: 77.5%;
   right: -3%;
   transform: rotate(-90deg);
   z-index: 1000;
+  width: 180px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .btn {
+    width: 100%;
+    height: 100%;
+    padding: 0;
     position: relative;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     background: none;
     border: none;
@@ -40,19 +48,10 @@ const StyledSidebarScroll = styled.div`
     }
   }
 
-  .btn-bot {
-    span {
-      padding-right: 20px;
-    }
-  }
-
   .btn-top {
-    margin-bottom: 50px;
     display: none;
-
-    span {
-      padding-left: 20px;
-    }
+    width: 120px;
+    right: 40px;
   }
 
   .btn:hover {
@@ -68,6 +67,15 @@ const StyledSidebarScroll = styled.div`
     transform: translateX(10px);
     transition: transform 0.6s;
   }
+
+  ${media.tablet`
+    top: 86%;
+    right: -4%;
+
+    .btn-top {
+      right: 30px;
+    }
+  `}
 
   ${media.phone`
     display: none;
@@ -115,23 +123,21 @@ class SidebarScroll extends React.Component {
   render() {
     return (
       <StyledSidebarScroll>
-        <div className="container">
-          <button
-            type="button"
-            className="btn btn-bot"
-            onClick={this.scrollToBottom}
-          >
-            <span>&#8592;</span>scroll to discover more
-          </button>
+        <button
+          type="button"
+          className="btn btn-bot"
+          onClick={this.scrollToBottom}
+        >
+          <span>&#8592;</span>scroll to discover more
+        </button>
 
-          <button
-            type="button"
-            className="btn btn-top"
-            onClick={this.scrollToTop}
-          >
-            scroll to top<span>&#8594;</span>
-          </button>
-        </div>
+        <button
+          type="button"
+          className="btn btn-top"
+          onClick={this.scrollToTop}
+        >
+          scroll to top<span>&#8594;</span>
+        </button>
       </StyledSidebarScroll>
     );
   }

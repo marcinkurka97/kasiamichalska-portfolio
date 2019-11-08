@@ -13,6 +13,13 @@ const SectionTemplateWhite = styled(StyledWrapper)`
   flex-direction: row;
   z-index: 5;
 
+  ${media.tablet`
+    height: 50vh;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: space-between;
+  `}
+
   ${media.phone`
     height: 60vh;
     width: 100vw;
@@ -20,7 +27,7 @@ const SectionTemplateWhite = styled(StyledWrapper)`
   `}
 `;
 
-const BooksTitle = styled.h1`
+const BooksTitle = styled.h2`
   margin: 0 30px 0 0;
   position: relative;
   height: 60vh;
@@ -42,9 +49,30 @@ const BooksTitle = styled.h1`
     right: 61px;
   }
 
+  ${media.tablet`
+    writing-mode: lr-tb;
+    border: none;
+    border-bottom: 1px solid ${colors.dark};
+    width: 70%;
+    left: 15%;
+    text-align: center;
+    margin: 0;
+    height: auto;
+    top: 0;
+    padding: 10px 0;
+    order: 1;
+
+    &:after {
+      display: none;
+    `}
+
   ${media.phone`
     writing-mode: lr-tb;
     border: none;
+    border-bottom: 1px solid ${colors.dark};
+    width: 70%;
+    left: 15%;
+    text-align: center;
     margin: 0;
     height: auto;
     top: 0;
@@ -63,6 +91,12 @@ const BooksWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${media.tablet`
+    order: 2;
+    width: 100vw;
+    height: 90%;
+  `}
 
   ${media.phone`
     order: 2;
@@ -99,17 +133,33 @@ const BooksContainer = styled.div`
     background-image: url(${Book2});
   }
 
+  ${media.tablet`
+    width: 60%;
+    height: 80%;
+    left: 0;
+
+    .book1 {
+      width: 70vw;
+      left: -45%;
+    }
+    .book2 {
+      width: 70vw;
+      right: -55%;
+    }
+  `}
+
   ${media.phone`
     width: 80%;
     height: 70%;
     left: 0;
-    border-width: 2px;
 
     .book1 {
-      left: -20%;
+      width: 50vw;
+      left: -10%;
     }
     .book2 {
-      right: -15%;
+      width: 50vw;
+      right: -20%;
     }
   `}
 `;

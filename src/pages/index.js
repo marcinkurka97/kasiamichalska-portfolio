@@ -1,10 +1,9 @@
 import React from 'react';
-import { colors, media } from 'utils';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { transitions, positions, Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
-
+import { colors, media } from 'utils';
 import AnimationPage from 'components/AnimationPage';
 import Navigation from 'components/Navigation';
 import SidebarScroll from 'components/Sidebars/SidebarScroll';
@@ -70,6 +69,10 @@ const SectionCombined = styled.div`
   align-items: center;
 
   ${media.phone`
+    flex-direction: column;
+  `}
+
+  ${media.tablet`
     flex-direction: column;
   `}
 `;

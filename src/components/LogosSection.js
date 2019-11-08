@@ -17,6 +17,13 @@ const SectionTemplateWhite = styled(StyledWrapper)`
   z-index: 5;
   align-self: flex-start;
 
+  ${media.tablet`
+    height: 65vh;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+  `}
+
   ${media.phone`
     width: 100vw;
     justify-content: space-between;
@@ -24,18 +31,27 @@ const SectionTemplateWhite = styled(StyledWrapper)`
   `}
 `;
 
-const LogosTitle = styled.h1`
+const LogosTitle = styled.h2`
   position: relative;
   width: 45vw;
   text-align: left;
   font-size: 50px;
-  margin: 0 0 60px 0;
+  margin: 20px 0;
   padding: 10px 0;
   border-bottom: 1px solid ${colors.dark};
   font-style: italic;
 
+  ${media.tablet`
+    margin: 0;
+    width: 80vw;
+    right: 10vw;
+    text-align: center;
+  `}
+
   ${media.phone`
     width: 80vw;
+    right: 10vw;
+    text-align: center;
     font-size: 40px;
     margin: 0;
   `}
@@ -50,6 +66,11 @@ const LogosWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
+  ${media.tablet`
+    width: 100vw;
+    height: 80%;
+    `}
+
   ${media.phone`
     width: 100vw;
     height: 80%;
@@ -58,7 +79,7 @@ const LogosWrapper = styled.div`
 
 const LogosContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-column-gap: 60px;
   grid-row-gap: 20px;
@@ -83,6 +104,18 @@ const LogosContainer = styled.div`
   .logo4 {
     background-image: url(${Logo4});
   }
+
+  ${media.tablet`
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 50px;
+    grid-row-gap: 20px;
+
+    .logos {
+      width: 30vw;
+      height: 30vw;
+    }
+  `}
 
   ${media.phone`
     grid-template-columns: 1fr 1fr;
