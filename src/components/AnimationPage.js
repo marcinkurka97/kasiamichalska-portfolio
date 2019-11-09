@@ -28,7 +28,7 @@ const SectionTemplate = styled(StyledWrapper)`
   height: 100vh;
   width: 100vw;
   z-index: 999999999;
-  animation: ${FadeOut} 1.5s 4.5s ease-in both;
+  animation: ${FadeOut} 1.5s 5.5s ease-in both;
 
   div {
     position: relative;

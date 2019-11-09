@@ -92,7 +92,7 @@ function Sidebar() {
             <a href="https://www.behance.net/katmich">behance</a>
           </li>
           <li>
-            <a href="https://www.instagram.com/kat_illustrations/">instagram</a>
+            <a href="https://www.instagram.com/cattleia_designs/">instagram</a>
           </li>
           <li>
             <a href="https://dribbble.com/cattleia">dribbble</a>
