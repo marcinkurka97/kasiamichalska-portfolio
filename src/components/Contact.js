@@ -197,6 +197,17 @@ const ContactWrapper = styled.div`
     }
   }
 
+  ${media.laptop`
+    width: 90%;
+
+    &:after {
+      left: 50%;
+      top: 17%;
+      width: 45%;
+      height: 54%;
+    }
+  `}
+
   ${media.tablet`
     width: 90%;
 
@@ -206,7 +217,6 @@ const ContactWrapper = styled.div`
       width: 45%;
       height: 68.5%;
     }
-
   `}
 
   ${media.phone`

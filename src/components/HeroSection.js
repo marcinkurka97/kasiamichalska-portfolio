@@ -33,6 +33,7 @@ const HeroWhiteBox = styled.div`
   ${media.laptop`
     width: 30vw;
     height: 30vw;
+    top: 10%;
   `}
 
   ${media.tablet`
@@ -116,6 +117,17 @@ const HeroQuote = styled.div`
     font-weight: 600;
     padding: 0 20px;
   }
+
+  ${media.laptop`
+  width: 90%;
+    q {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  `}
 
   ${media.tablet`
     width: 70%;

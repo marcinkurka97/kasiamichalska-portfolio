@@ -26,6 +26,16 @@ const LogoContainer = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
 
+  ${media.laptop`
+    height: 150px;
+    width: 150px;
+  `}
+
+  ${media.tablet`
+    width: 200px;
+    height: 200px;
+  `}
+
   ${media.phone`
     height: 100px;
     width: 20vw;
@@ -67,6 +77,14 @@ const StyledNavButtons = styled.div`
       }
     }
   }
+
+  ${media.laptop`
+    ul li {
+      button {
+        font-size: 20px;
+      }
+    }
+  `}
 
   ${media.phone`
     height: 50px;
