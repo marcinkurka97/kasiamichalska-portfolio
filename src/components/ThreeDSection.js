@@ -46,6 +46,16 @@ const ThreeDTitle = styled.h2`
     right: 61px;
   }
 
+  ${media.laptop`
+    right: 15%;
+    padding: 0 10px;
+
+    &:after {
+      width: 100vw;
+      right: 81px;
+    }
+  `}
+
   ${media.tablet`
     right: 0;
     height: 92%;

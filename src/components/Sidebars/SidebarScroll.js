@@ -68,6 +68,11 @@ const StyledSidebarScroll = styled.div`
     transition: transform 0.6s;
   }
 
+  ${media.laptop`
+    top: 72.5%;
+    right: -4%;
+  `}
+
   ${media.tablet`
     top: 86%;
     right: -4%;

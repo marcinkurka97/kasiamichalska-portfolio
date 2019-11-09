@@ -8,6 +8,14 @@ const SectionTemplateWhite = styled(StyledWrapper)`
   height: 60vh;
   background: ${colors.light};
 
+  ${media.laptop`
+    height: 80vh;
+  `}
+
+  ${media.tablet`
+    height: 60vh;
+  `}
+
   ${media.phone`
     height: 90vh;
   `}
@@ -30,6 +38,19 @@ const AboutContainer = styled.div`
     line-height: 30px;
     font-weight: 300;
   }
+
+    ${media.laptop`
+    width: 70%;
+
+      h3 {
+        font-size: 32px;
+        font-weight: 500;
+      }
+      
+      p {
+        font-size: 22px;
+      }
+    `}
 
   ${media.tablet`
   width: 70%;

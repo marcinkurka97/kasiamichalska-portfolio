@@ -4,10 +4,14 @@ import StyledWrapper from 'components/SectionTemplate';
 import { media } from 'utils';
 
 const SectionTemplate = styled(StyledWrapper)`
-  height: 10vh;
+  height: 7vh;
   z-index: 5;
   font-size: 12px;
   font-weight: 500;
+
+  ${media.laptop`
+    height: 7vh;
+  `}
 
   ${media.tablet`
     height: 5vh;

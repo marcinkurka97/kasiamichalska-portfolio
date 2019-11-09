@@ -30,6 +30,11 @@ const HeroWhiteBox = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  ${media.laptop`
+    width: 30vw;
+    height: 30vw;
+  `}
+
   ${media.tablet`
     width: 50vw;
     height: 50vw;
@@ -64,6 +69,11 @@ const HeroImage = styled.div`
     background-size: contain;
     z-index: -1;
   }
+
+  ${media.laptop`
+    width: 20vw;
+    height: 20vw;
+  `}
 
   ${media.tablet`
     width: 70%;

@@ -29,6 +29,10 @@ const SectionTemplateWhite = styled(StyledWrapper)`
   flex-direction: column;
   justify-content: space-between;
 
+  ${media.laptop`
+    height: 85vh;
+  `}
+
   ${media.tablet`
     height: 60vh;
   `}
@@ -71,9 +75,9 @@ const ContactWrapper = styled.div`
     content: '';
     position: absolute;
     left: 50%;
-    top: 12%;
+    top: 13%;
     width: 45%;
-    height: 65%;
+    height: 64%;
     background-image: url(${Waves});
     background-size: cover;
     z-index: -1;
@@ -198,9 +202,9 @@ const ContactWrapper = styled.div`
 
     &:after {
       left: 50%;
-      top: 12.5%;
+      top: 11.5%;
       width: 45%;
-      height: 65.5%;
+      height: 68.5%;
     }
 
   `}
@@ -210,9 +214,9 @@ const ContactWrapper = styled.div`
 
     &:after {
       left: -10%;
-      top: 10%;
+      top: 15%;
       width: 110vw;
-      height: 49.5%;
+      height: 47.5%;
     }
 
     form {

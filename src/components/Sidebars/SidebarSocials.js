@@ -65,6 +65,11 @@ const StyledSidebar = styled.div`
     }
   }
 
+  ${media.laptop`
+    top: 62.5%;
+    left: -10%;
+  `}
+
   ${media.tablet`
     height: 30px;
     top: 80vh;

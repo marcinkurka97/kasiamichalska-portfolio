@@ -28,7 +28,7 @@ const LogoBookTitle = styled.h2`
   &:after {
     content: '';
     position: absolute;
-    top: -3vh;
+    top: -4vh;
     right: 5vw;
     width: 50vw;
     height: 200%;

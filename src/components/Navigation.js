@@ -109,7 +109,7 @@ class Navigation extends Component {
   }
 
   scrollTo = element => {
-    ({
+    window.scroll({
       top: document.getElementById(element).offsetTop,
       left: 0,
       behavior: 'smooth',
