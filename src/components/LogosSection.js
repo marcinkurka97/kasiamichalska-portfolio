@@ -5,7 +5,7 @@ import { colors, media } from 'utils';
 import Logo1 from 'assets/images/polaroid.svg';
 import Logo2 from 'assets/images/pizzaDuet.svg';
 import Logo3 from 'assets/images/pizzaCheesey.svg';
-import Logo4 from 'assets/images/symBio.svg';
+import Logo4 from 'assets/images/pizza2.svg';
 
 const SectionTemplateWhite = styled(StyledWrapper)`
   height: 80vh;

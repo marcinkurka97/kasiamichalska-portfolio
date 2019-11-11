@@ -85,8 +85,8 @@ const AboutSection = ({ id }) => (
     <AboutContainer>
       <h3>
         Hej, jestem Kasia, jestem studentką grafiki i freelancerem. Od&nbsp;9 do
-        15 robię wszystko to, czego ode mnie oczekują. A&nbsp;później zaczynam
-        tworzyć DESIGN.
+        15 robię to, czego ode mnie oczekują. A&nbsp;później zaczynam tworzyć
+        DESIGN.
       </h3>
       <p>
         Studiuję grafikę na Wyższej Szkole Technicznej w&nbsp;Katowicach.
